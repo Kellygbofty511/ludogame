@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ranking - Ludo Project</title>
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/storage.js"></script>
+    <script>requireLogin();</script>
+  </head>
+
+  <body>
+    <div id="nav"></div>
+
+    <h1>Ranking</h1>
+    <p class="subtitle">A win is 3 points. Playing a game and not winning is 1 point.</p>
+
+    <div class="panel wide">
+      <div class="strip"><span class="g"></span><span class="b"></span><span class="y"></span><span class="r"></span></div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Player</th>
+              <th>Played</th>
+              <th>Wins</th>
+              <th>Losses</th>
+              <th>Win rate</th>
+              <th>Points</th>
+            </tr>
+          </thead>
+          <tbody id="rankBody"></tbody>
+        </table>
+      </div>
+      <p class="note">Players with the same points and wins share a rank.</p>
+
+      <div class="section-gap">
+        <h2>Record a game</h2>
+
+        <form id="matchForm" novalidate>
+          <label>Who played? (2 to 4 players)</label>
+          <div class="players" id="playerList"></div>
+
+          <label for="winner">Winner</label>
+          <select id="winner"></select>
+
+          <p class="message" id="matchMessage" role="alert"></p>
+          <button type="submit" class="action">Save result</button>
+        </form>
+      </div>
+
+      <div class="section-gap">
+        <h2>Add a guest player</h2>
+        <p class="note">For friends who don't have an account. Guests appear in the ranking but can't log in.</p>
+        <form id="guestForm" novalidate>
+          <div class="row">
+            <input type="text" id="guestName" placeholder="Guest name" aria-label="Guest name" />
+            <button type="submit" class="plain">Add guest</button>
+          </div>
+          <p class="message" id="guestMessage" role="alert"></p>
+        </form>
+      </div>
+
+      <div class="row-end">
+        <span class="note">Results are saved in this browser only.</span>
+        <button type="button" class="plain" id="resetBtn">Reset ranking</button>
+      </div>
+    </div>
+
+    <script src="js/ranking.js"></script>
+  </body>
+</html>

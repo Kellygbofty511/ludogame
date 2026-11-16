@@ -1,0 +1,62 @@
+/* nav.css - only the top bar, no resets, so it is safe to load on the board page */
+
+.topbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 30px;
+  background-color: #222222;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: 15px;
+  text-align: left;
+}
+
+.topbar a {
+  color: beige;
+  text-decoration: none;
+  margin-right: 24px;
+  padding-bottom: 2px;
+}
+
+.topbar a:hover {
+  border-bottom: 2px solid beige;
+}
+
+.topbar a.current {
+  border-bottom: 2px solid rgba(255, 255, 0, 0.7);
+}
+
+.topbar .user span {
+  color: beige;
+  margin-right: 14px;
+}
+
+.topbar button {
+  background: none;
+  border: 2px solid beige;
+  color: beige;
+  padding: 4px 12px;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.topbar button:hover {
+  background-color: beige;
+  color: #222222;
+}
+
+.topbar a:focus-visible,
+.topbar button:focus-visible {
+  outline: 2px solid rgba(255, 255, 0, 0.9);
+  outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+  .topbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 15px;
+  }
+}

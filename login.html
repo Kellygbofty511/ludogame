@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Log in - Ludo Project</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/storage.js"></script>
+    <script>skipIfLoggedIn();</script>
+  </head>
+
+  <body>
+    <h1>THE LUDO GAME</h1>
+    <p class="subtitle">Log in to play and see the rankings.</p>
+
+    <div class="panel">
+      <div class="strip"><span class="g"></span><span class="b"></span><span class="y"></span><span class="r"></span></div>
+
+      <h2>Log in</h2>
+
+      <form id="loginForm" novalidate>
+        <label for="user">Username or email</label>
+        <input type="text" id="user" autocomplete="username" />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" autocomplete="current-password" />
+
+        <p class="message" id="message" role="alert"></p>
+
+        <button type="submit" class="action">Log in</button>
+      </form>
+
+      <p class="switch">No account yet? <a href="register.html">Register here</a></p>
+    </div>
+
+    <script src="js/login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,161 @@
+/* game.css - the game panel above the board and the tokens on it.
+   Scoped to #game-panel and .token so the board's own styles are not touched. */
+
+#game-panel {
+  width: 80%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px 24px;
+  background-color: beige;
+  border: 3px solid #222222;
+  color: #222222;
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: 16px;
+  text-align: left;
+}
+
+#game-panel h2 {
+  margin-bottom: 12px;
+  font-size: 22px;
+}
+
+#game-panel .line {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+#game-panel .turn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 160px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#game-panel .dice {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 3px solid #222222;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#game-panel .msg {
+  min-height: 22px;
+  margin: 12px 0;
+}
+
+#game-panel .players {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-bottom: 14px;
+}
+
+#game-panel .player {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 2px;
+  border-bottom: 3px solid transparent;
+}
+
+#game-panel .player.active {
+  border-bottom-color: #222222;
+  font-weight: bold;
+}
+
+#game-panel .seats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 10px;
+  margin: 14px 0 4px;
+}
+
+#game-panel .seat {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#game-panel select {
+  padding: 6px;
+  border: 2px solid #222222;
+  background-color: white;
+  font-family: inherit;
+  font-size: 15px;
+}
+
+#game-panel .btn {
+  padding: 10px 18px;
+  background-color: #222222;
+  color: beige;
+  border: none;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#game-panel .btn:hover:not(:disabled) {
+  background-color: #444444;
+}
+
+#game-panel .btn:disabled {
+  background-color: #888888;
+  cursor: not-allowed;
+}
+
+#game-panel .small-btn {
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+#game-panel a {
+  color: #222222;
+}
+
+/* colour markers: solid versions of the board colours */
+.chip {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 3px solid #222222;
+}
+
+.chip.blue, .token.blue { background-color: #2233cc; }
+.chip.yellow, .token.yellow { background-color: #e8c600; }
+.chip.red, .token.red { background-color: #d42a2a; }
+.chip.green, .token.green { background-color: #1c8c2c; }
+
+/* tokens sit on top of the board cells without changing their size */
+.token {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  margin: -13px 0 0 -13px;
+  box-sizing: border-box;
+  border: 3px solid #222222;
+  border-radius: 50%;
+}
+
+.token.movable {
+  z-index: 2;
+  box-shadow: 0 0 0 3px white, 0 0 0 5px #222222;
+  cursor: pointer;
+}
+
+#game-panel button:focus-visible,
+#game-panel select:focus-visible,
+.token:focus-visible {
+  outline: 3px solid rgba(0, 0, 255, 0.562);
+  outline-offset: 2px;
+}
